@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+<div style="background-color: #ffffff; padding: 20px; border-radius: 10px; max-width: 600px;
+                         margin: auto;">
+    <h1 style="color: #333;">Запись</h1>
+    <h2 style="color: #007BFF;">Уважаемый(ая) <span th:text="${login}"></span></h2>
+    <p style="font-size: 16px; color: #333;">
+        Вы записались к врачу <span th:text="${doctor}"></span>
+    </p>
+    <p style="font-size: 16px; color: #333;">
+        С уважением,<br>
+        <strong>Doctor AI</strong>
+    </p>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://example.com" style="background-color: #007BFF;
+                                 color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            Перейти на сайт
+        </a>
+    </div>
+</div>
+</body>
+</html>
