@@ -20,8 +20,11 @@ pipeline {
 
         stage('Docker Build & Push') {
             steps {
-                script {
-                    docker.build("${IMAGE_NAME}").push("latest")
+                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+                    script {
+                        docker.build("${IMAGE_NAME}").push("latest")
+                    }
                 }
             }
         }
